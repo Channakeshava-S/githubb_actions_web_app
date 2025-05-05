@@ -1,11 +1,13 @@
 on: push
+
 jobs:
-  build-contaniers:
+  build-containers:
     name: Build Docker Containers
-    runs-as: ubuntu-latest
+    runs-on: ubuntu-latest # Fixed typo: 'runs-as' → 'runs-on'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
